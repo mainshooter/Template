@@ -4,7 +4,7 @@ body, html {
 }
 
 .header {
-  background-color: #c0392b;
+  background-color: #3498db;
   box-shadow: 0px 7px 4px #bdc3c7;
   margin-bottom: 1em;
 }
@@ -61,12 +61,12 @@ body, html {
 }
 
 .menu ul li {
-  background-color: #f39c12;
+  background-color: #34495e;
   font-size: 1.3em;
   margin-left: 0;
 }
 .menu ul li:hover {
-  background-color: #e67e22;
+  background-color: #2c3e50;
   transition: 0.1s;
 }
 .menu ul li a {
