@@ -175,7 +175,7 @@ var timerTime;
 
     /**
      * To set the function we need to send the keypress to
-     * @param  {[string]} functionName [The name of the function]
+     * @param  {[function]} functionName [The name of the function]
      */
     setKeyPressReturnFunction: function(functionName) {
       keyPressReturnFunction = function() { functionName(lastKeyPress); };
