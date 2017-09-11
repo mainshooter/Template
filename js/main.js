@@ -2,6 +2,8 @@ var Ajax;
 var Loader;
 var KeyDetector;
 var ElementCreator;
+var Listners;
+// The classes
 
 var keyDetectorStatus;
 // To save if we enable to keylogger yes or no
@@ -268,6 +270,30 @@ var timerTime;
       xhttp.open("POST", url, false);
       xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
       xhttp.send(postParameters);
+    }
+  }
+})();
+
+(function() {
+  Listners = {
+    /**
+     * Adds a event listner to a element
+     * @param  {[string]} element      [The ID of a element]
+     * @param  {[string]} eventName    [The name of the event we want to add to the element]
+     * @param  {[function]} functionName [The name of the function we want to link to the element]
+     */
+    add: function(element, eventName, functionName) {
+      select(element).addEventListener(eventName, function(){ functionName(); });
+    },
+
+    /**
+     * Removes a event listner from a element
+     * @param  {[string]} element      [The ID of a element]
+     * @param  {[string]} eventName    [The name of the event we want to remove of a element]
+     * @param  {[function]} functionName [The name of a function we want to link to the element]
+     */
+    remove: function(element, eventName, functionName) {
+      select(element).removeEventListener(eventName, function(){ functionName(); });
     }
   }
 })();
