@@ -272,6 +272,24 @@ var timerTime;
   }
 })();
 
+/**
+ * Selects one element
+ * @param  {[string]} element [The selector for the element]
+ * @return {[DOM]}         [The selected element]
+ */
+function select(element) {
+  return(document.querySelector(element));
+}
+
+/**
+ * Selects all element that will it will find
+ * @param  {[string]} elements [The selector for all the elements]
+ * @return {[array]}          [All the elements that have been found]
+ */
+function selectAll(elements) {
+  return(document.querySelectorAll(elements));
+}
+
 keyCodes = {
   3 : "break",
   8 : "backspace / delete",
