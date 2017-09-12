@@ -278,7 +278,7 @@ var timerTime;
   Listners = {
     /**
      * Adds a event listner to a element
-     * @param  {[string]} element      [The ID of a element]
+     * @param  {[string]} element      [The identifyer of a element]
      * @param  {[string]} eventName    [The name of the event we want to add to the element]
      * @param  {[function]} functionName [The name of the function we want to link to the element]
      */
@@ -288,7 +288,7 @@ var timerTime;
 
     /**
      * Removes a event listner from a element
-     * @param  {[string]} element      [The ID of a element]
+     * @param  {[string]} element      [The identifyer of a element]
      * @param  {[string]} eventName    [The name of the event we want to remove of a element]
      * @param  {[function]} functionName [The name of a function we want to link to the element]
      */
