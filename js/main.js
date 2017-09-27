@@ -15,8 +15,6 @@ var keyCodes;
 // All the keyCodes
 
 
-var createdElement;
-// The current created element
 
 var Timer;
 var timerInterval;
@@ -26,12 +24,17 @@ var timerTime;
 (function() {
   ElementCreator = {
 
+    createdElement: '',
+    // The current created element
+
     /**
      * Creates a new HTML tag
      * @param  {[string]} htmlTag [The HTML tag you want to create]
      */
     createElement: function(htmlTag) {
+      var createdElement = ElementCreator.createdElement;
       createdElement = document.createElement(htmlTag);
+      ElementCreator.createdElement = createdElement;
     },
 
     /**
@@ -39,7 +42,9 @@ var timerTime;
      * @param  {[string]} classNames [The new classnames we want to give to the element]
      */
     setClassNames: function(classNames) {
+      var createdElement = ElementCreator.createdElement;
       createdElement.className = classNames;
+      ElementCreator.createdElement = createdElement;
     },
 
     /**
@@ -47,7 +52,9 @@ var timerTime;
      * @param  {[string]} ids [The ID for the element]
      */
     setIDs: function(ids) {
+      var createdElement = ElementCreator.createdElement;
       createdElement.id = ids;
+      ElementCreator.createdElement = createdElement;
     },
 
     /**
@@ -55,7 +62,9 @@ var timerTime;
      * @param  {[string]} html [The HTML we want to set in the new element]
      */
     setHTML: function(html) {
+      var createdElement = ElementCreator.createdElement;
       createdElement.innerHTML = html;
+      ElementCreator.createdElement = createdElement;
     },
 
     /**
@@ -63,7 +72,9 @@ var timerTime;
      * @param  {[string]} text [The text we want to set in the element]
      */
     setText: function(text) {
+      var createdElement = ElementCreator.createdElement;
       createdElement.createTextNode = text;
+      ElementCreator.createdElement = createdElement;
     },
 
     /**
@@ -71,8 +82,9 @@ var timerTime;
      * @param  {[string]} id [The ID of the element we want to place it on]
      */
     place: function(id) {
+      var createdElement = ElementCreator.createdElement;
       if (createdElement != '') {
-        document.getElementById(id).appendChild(element);
+        document.getElementById(id).appendChild(createdElement);
       }
       else {
         console.log('No element was created first! Use ElementCreator.createElement');
