@@ -17,9 +17,6 @@ var keyCodes;
 
 
 var Timer;
-var timerInterval;
-var timerTime;
-// Contains the current time from the timer in s
 
 (function() {
   ElementCreator = {
@@ -97,20 +94,45 @@ var timerTime;
 
 (function() {
   Timer = {
+
+    time: 0,
+    // Contain the current time in seconds
+
+    timerCallback: '',
+    // The callback function
+
+    timeInterval: '',
+    // Contain the interval
+
     /**
      * Increase the current time on the timer by 1 sec
      * @return {[type]} [description]
      */
-    counter: function() {
-      timerTime++;
+    count: function() {
+      Timer.time++;
     },
+
+    /**
+     * Sets the callback function for the timer when it runs
+     * @param  {[Function]} functionName [The name of the function]
+     */
+    setTimerCallback: function(functionName) {
+      Timer.timerCallback = functionName;
+    }
 
     /**
      * Starts the timer
      * @return {[type]} [description]
      */
     start: function() {
-      timerInterval = setInterval(function(){Timer.counter();}, 1000);
+      Timer.timerInterval = setInterval(function(){
+        var callbackFunction = Timer.timerCallback;
+        callbackFunction(Timer.getCurrentTime());
+        // By default we send the current time
+
+        Timer.count();
+        // Increas the counter
+      }, 1000);
     },
 
     /**
@@ -118,7 +140,7 @@ var timerTime;
      * @return {[type]} [description]
      */
     end: function() {
-      clearInterval(timerInterval)
+      clearInterval(Timer.timerInterval);
     },
 
     /**
@@ -126,7 +148,7 @@ var timerTime;
      * @return {[INT]} [The current time that is displaying on the timer]
      */
     getCurrentTime: function() {
-      return(timerTime);
+      return(Timer.time);
     }
   }
 })();
