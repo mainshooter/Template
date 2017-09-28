@@ -485,8 +485,19 @@ var VideoHandler;
       return(VideoHandler.videoHandlerElement.currentTime);
     },
 
+    /**
+     * Returns the video status of the video element
+     * If the video is playing or not
+     * @return {[string]} [Return the play status as a string]
+     */
     getVideoStatus: function() {
+      if (VideoHandler.videoHandlerElement.paused === true) {
+        return('paused');
+      }
 
+      else if (VideoHandler.videoHandlerElement.paused === false) {
+        return('playing');
+      }
     }
   }
 })();
