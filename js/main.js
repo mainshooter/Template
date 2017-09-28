@@ -24,9 +24,7 @@ var Timer;
      * @param  {[string]} htmlTag [The HTML tag you want to create]
      */
     createElement: function(htmlTag) {
-      var createdElement = ElementCreator.createdElement;
-      createdElement = document.createElement(htmlTag);
-      ElementCreator.createdElement = createdElement;
+      ElementCreator.createdElement = document.createElement(htmlTag);
     },
 
     /**
@@ -73,10 +71,10 @@ var Timer;
      * Places the created element on the DOM!
      * @param  {[string]} id [The ID of the element we want to place it on]
      */
-    place: function(id) {
+    place: function(element) {
       var createdElement = ElementCreator.createdElement;
       if (createdElement != '') {
-        document.getElementById(id).appendChild(createdElement);
+        select(element).appendChild(createdElement);
       }
       else {
         console.log('No element was created first! Use ElementCreator.createElement');
