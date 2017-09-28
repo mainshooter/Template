@@ -99,7 +99,7 @@ var VideoHandler;
     timeInterval: '',
     // Contain the interval
 
-    timeOutMiliseconds: 1000;
+    timeOutMiliseconds: 1000,
 
     /**
      * Increase the current time on the timer by 1 sec
@@ -410,7 +410,6 @@ var VideoHandler;
 (function() {
   /**
    * Can controll a Video
-   * @type {Object}
    */
   VideoHandler = {
     videoHandlerElement: '',
@@ -485,6 +484,10 @@ var VideoHandler;
     getCurrentPlayTime: function() {
       return(VideoHandler.videoHandlerElement.currentTime);
     },
+
+    getVideoStatus: function() {
+
+    }
   }
 })();
 
