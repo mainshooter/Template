@@ -126,7 +126,7 @@ var Timer;
         // By default we send the current time
 
         Timer.count();
-        // Increas the counter
+        // Increase the counter
       }, 1000);
     },
 
