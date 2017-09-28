@@ -5,14 +5,8 @@ var ElementCreator;
 var Listners;
 // The classes
 
-var keyDetectorStatus;
-// To save if we enable to keylogger yes or no
-var keyPressReturnFunction;
-// Saves the function name we later want to use to send the translated keypress to
-var lastKeyPress;
-// The key we last have pressed
-var keyCodes;
-// All the keyCodes
+
+
 
 
 
@@ -118,7 +112,7 @@ var Timer;
      */
     setTimerCallback: function(functionName) {
       Timer.timerCallback = functionName;
-    }
+    },
 
     /**
      * Starts the timer
@@ -183,11 +177,23 @@ var Timer;
    *
    */
   KeyDetector = {
+
+    status: false,
+    keyCodes: [],
+    // All the keyCodes
+
+    lastKeyPress: [],
+    // The key we last have pressed
+
+    keyPressReturnFunction: '',
+    // Saves the function name we later want to use to send the translated keypress to
+
+
     /**
      * Enables the key detector
      */
     enable: function() {
-      keyDetectorStatus = true;
+      KeyDetector.status = true;
       document.addEventListener('keydown', function(){ KeyDetector.keyPressTranslator(event); });
       console.log('KeyDetector is enabled');
     },
@@ -196,7 +202,7 @@ var Timer;
      * Disabled the key detector
      */
     disable: function() {
-      keyDetectorStatus = false;
+      KeyDetector.status = false;
       document.removeEventListener('keydown', function() { KeyDetector.keyPressTranslator(); });
       console.log('KeyDetector is disabled');
     },
@@ -206,7 +212,7 @@ var Timer;
      * @return {[boolean]} [If it is enabled or not]
      */
     getStatus: function() {
-      return(keyDetectorStatus);
+      return(KeyDetector.status);
     },
 
     /**
@@ -214,7 +220,7 @@ var Timer;
      * @param  {[function]} functionName [The name of the function]
      */
     setKeyPressReturnFunction: function(functionName) {
-      keyPressReturnFunction = function() { functionName(lastKeyPress); };
+      KeyDetector.keyPressReturnFunction = function() { functionName(lastKeyPress); };
     },
 
     /**
@@ -224,13 +230,13 @@ var Timer;
     keyPressTranslator: function(event) {
       if (KeyDetector.getStatus() == true) {
 
-        if (keyPressReturnFunction != '') {
+        if (KeyDetector.KeyDetector.keyPressReturnFunction != '') {
           var keyCode = event.keyCode;
           // Contains a array with the keycode and what the code means
 
-            lastKeyPress = [keyCode ,keyCodes[keyCode]];
+            KeyDetector.lastKeyPress = [keyCode ,keyCodes[keyCode]];
 
-          keyPressReturnFunction();
+          KeyDetector.keyPressReturnFunction();
         }
 
         else {
