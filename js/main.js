@@ -369,7 +369,7 @@ var VideoHandler;
      * Generates the content for the table (td's)
      * @return {[string]} [The HTML code]
      */
-    tabelContent: function() {
+    tableContent: function() {
       var content = '';
       var currentArray = MultiArrayVisualizer.multiArray;
       currentArray.forEach(function(rowArray, index, arr) {
