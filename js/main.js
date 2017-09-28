@@ -98,6 +98,8 @@ var MultiArrayVisualizer;
     timeInterval: '',
     // Contain the interval
 
+    timeOutMiliseconds: 1000;
+
     /**
      * Increase the current time on the timer by 1 sec
      * @return {[type]} [description]
@@ -115,6 +117,15 @@ var MultiArrayVisualizer;
     },
 
     /**
+     * Sets the time for the timeout for the set interval
+     * By default it is 1000 miliseconds (1 second)
+     * @param  {[int]} timeInMiliseconds [The timeout time in miliseconds]
+     */
+    setTimeOut: function(timeInMiliseconds) {
+      Timer.timeOutMiliseconds = timeInMiliseconds;
+    }
+
+    /**
      * Starts the timer
      * @return {[type]} [description]
      */
@@ -126,7 +137,7 @@ var MultiArrayVisualizer;
 
         Timer.count();
         // Increase the counter
-      }, 1000);
+      }, Timer.timeOutMiliseconds);
     },
 
     /**
