@@ -191,7 +191,6 @@ var VideoHandler;
   KeyDetector = {
 
     status: false,
-    keyCodes: [],
     // All the keyCodes
 
     lastKeyPress: [],
@@ -521,7 +520,7 @@ function selectAll(elements) {
   return(document.querySelectorAll(elements));
 }
 
-keyCodes = {
+var keyCodes = {
   3 : "break",
   8 : "backspace / delete",
   9 : "tab",
