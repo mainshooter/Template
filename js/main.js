@@ -354,6 +354,10 @@ var MultiArrayVisualizer;
       MultiArrayVisualizer.multiArray = IncomingArray;
     },
 
+    /**
+     * Generates the content for the table (td's)
+     * @return {[string]} [The HTML code]
+     */
     tabelContent: function() {
       var content = '';
       var currentArray = MultiArrayVisualizer.multiArray;
@@ -369,16 +373,22 @@ var MultiArrayVisualizer;
       return(content);
     }
 
+    /**
+     * Generates a table when the multiArray is set
+     * @return {[string / boolean]} [On succes we return the table / When it fails we return false]
+     */
     generateTable: function() {
       if (MultiArrayVisualizer.multiArray.length > 0) {
         // If the array a array is set
         var table = '<table>';
         table += MultiArrayVisualizer.tableContent();
         table += '</table>';
+        return(table);
       }
 
       else {
         console.log("No array has been set!, use MultiArrayVisualizer.setMultiArray to set a array");
+        return(false);
       }
 
     }
