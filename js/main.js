@@ -221,7 +221,7 @@ var Timer;
      * @param  {[function]} functionName [The name of the function]
      */
     setKeyPressReturnFunction: function(functionName) {
-      KeyDetector.keyPressReturnFunction = function() { functionName(lastKeyPress); };
+      KeyDetector.keyPressReturnFunction = function() { functionName(KeyDetector.lastKeyPress); };
     },
 
     /**
