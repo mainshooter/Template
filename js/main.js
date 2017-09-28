@@ -342,8 +342,8 @@ var MultiArrayVisualizer;
   /**
    * To generate a table from a 2 dimensional array
    */
-  MultiArrayVisualizer = {
-    multiArray = [],
+  MultiArrayVisualizer: {
+    multiArray: [],
     // Contains the current array
 
     /**
