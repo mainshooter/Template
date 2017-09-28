@@ -3,6 +3,7 @@ var Loader;
 var KeyDetector;
 var ElementCreator;
 var Listners;
+var Timer;
 // The classes
 
 
@@ -10,7 +11,7 @@ var Listners;
 
 
 
-var Timer;
+
 
 (function() {
   ElementCreator = {
