@@ -124,7 +124,7 @@ var VideoHandler;
      */
     setTimeOut: function(timeInMiliseconds) {
       Timer.timeOutMiliseconds = timeInMiliseconds;
-    }
+    },
 
     /**
      * Starts the timer
