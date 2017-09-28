@@ -241,7 +241,7 @@ var VideoHandler;
     keyPressTranslator: function(event) {
       if (KeyDetector.getStatus() == true) {
 
-        if (KeyDetector.KeyDetector.keyPressReturnFunction != '') {
+        if (KeyDetector.keyPressReturnFunction != '') {
           var keyCode = event.keyCode;
           // Contains a array with the keycode and what the code means
 
