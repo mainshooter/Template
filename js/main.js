@@ -342,7 +342,7 @@ var MultiArrayVisualizer;
   /**
    * To generate a table from a 2 dimensional array
    */
-  MultiArrayVisualizer: {
+  MultiArrayVisualizer = {
     multiArray: [],
     // Contains the current array
 
@@ -371,7 +371,7 @@ var MultiArrayVisualizer;
         content += '</tr>';
       });
       return(content);
-    }
+    },
 
     /**
      * Generates a table when the multiArray is set
