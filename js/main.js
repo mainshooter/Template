@@ -5,6 +5,7 @@ var ElementCreator;
 var Listners;
 var Timer;
 var MultiArrayVisualizer;
+var VideoHandler;
 // The classes
 
 
@@ -403,6 +404,87 @@ var MultiArrayVisualizer;
       }
 
     }
+  }
+})();
+
+(function() {
+  /**
+   * Can controll a Video
+   * @type {Object}
+   */
+  VideoHandler = {
+    videoHandlerElement: '',
+
+    /**
+     * You set the element for the obj to work with it later
+     * @param  {[string]} element [The element identifyer]
+     */
+    setVideoElement: function(element) {
+      VideoHandler.videoHandlerElement = select(element);
+    },
+
+    /**
+     * Plays the video
+     */
+    play: function() {
+      VideoHandler.videoHandlerElement.play();
+    },
+
+    /**
+     * Pauses the video and set the time of the video to the start
+     */
+    stop: function() {
+      VideoHandler.pause();
+      VideoHandler.setCurrentTime(0);
+    },
+
+    /**
+     * Pauses the video
+     */
+    pause: function() {
+      VideoHandler.videoHandlerElement.pause();
+    },
+
+    /**
+     * Controlls the volume of the video
+     * @param  {[float]} volumeLvl [0.0 to 1.0 form silent to loud]
+     */
+    volume: function(volumeLvl) {
+      VideoHandler.videoHandlerElement = volumeLvl;
+    },
+
+    /**
+     * Controlls the speed of the video is playing
+     * @param  {[float]} speedLvl [0.1 to 1.0 from slow to normal or faster!]
+     */
+    playbackRate: function(speedLvl) {
+      VideoHandler.videoHandlerElement = speedLvl;
+    },
+
+    /**
+     * Sets the current time of were the video is playing
+     * @param  {[type]} timeInSeconds [description]
+     * @return {[type]}               [description]
+     */
+    setCurrentTime: function(timeInSeconds) {
+      VideoHandler.videoHandlerElement = timeInSeconds;
+    },
+
+    /**
+     * Returns the lenght of the full video
+     * @return {[int]} [The time in seconds]
+     */
+    getFullLenght: function() {
+      return(VideoHandler.videoHandlerElement.duration);
+    },
+
+    /**
+     * Returns the current time of were the video is playing
+     * @return {[int]} [The current time of the video in seconds]
+     */
+    getCurrentPlayTime: function() {
+      return(VideoHandler.videoHandlerElement.currentTime);
+    },
   }
 })();
 
