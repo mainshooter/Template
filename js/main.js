@@ -4,6 +4,7 @@ var KeyDetector;
 var ElementCreator;
 var Listners;
 var Timer;
+var MultiArrayVisualizer;
 // The classes
 
 
@@ -336,6 +337,54 @@ var Timer;
     }
   }
 })();
+
+(function() {
+  /**
+   * To generate a table from a 2 dimensional array
+   */
+  MultiArrayVisualizer = {
+    multiArray = [],
+    // Contains the current array
+
+    /**
+     * Sets the multi dimensional array
+     * @param  {[arr]} IncomingArray [The 2 dimensional array for this obj]
+     */
+    setMultiArray: function(IncomingArray) {
+      MultiArrayVisualizer.multiArray = IncomingArray;
+    },
+
+    tabelContent: function() {
+      var content = '';
+      var currentArray = MultiArrayVisualizer.multiArray;
+      currentArray.forEach(function(rowArray, index, arr) {
+        // To loop trough the first layer of the array
+        content += '<tr>';
+        rowArray.forEach(function(value, index, arr) {
+          // To loop trough the second layer of the array
+          content += '<td>' + value +  '</td>';
+        });
+        content += '</tr>';
+      });
+      return(content);
+    }
+
+    generateTable: function() {
+      if (MultiArrayVisualizer.multiArray.length > 0) {
+        // If the array a array is set
+        var table = '<table>';
+        table += MultiArrayVisualizer.tableContent();
+        table += '</table>';
+      }
+
+      else {
+        console.log("No array has been set!, use MultiArrayVisualizer.setMultiArray to set a array");
+      }
+
+    }
+  }
+})();
+
 
 /**
  * Selects one element
