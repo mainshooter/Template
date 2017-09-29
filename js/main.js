@@ -35,7 +35,7 @@ var NumberHandler;
      * @param  {[string]} classNames [The new classnames we want to give to the element]
      */
     setClassNames: function(classNames) {
-      var createdElement = ElementCreator.createdElement;
+      let createdElement = ElementCreator.createdElement;
       createdElement.className = classNames;
       ElementCreator.createdElement = createdElement;
     },
@@ -45,7 +45,7 @@ var NumberHandler;
      * @param  {[string]} ids [The ID for the element]
      */
     setIDs: function(ids) {
-      var createdElement = ElementCreator.createdElement;
+      let createdElement = ElementCreator.createdElement;
       createdElement.id = ids;
       ElementCreator.createdElement = createdElement;
     },
@@ -55,7 +55,7 @@ var NumberHandler;
      * @param  {[string]} html [The HTML we want to set in the new element]
      */
     setHTML: function(html) {
-      var createdElement = ElementCreator.createdElement;
+      let createdElement = ElementCreator.createdElement;
       createdElement.innerHTML = html;
       ElementCreator.createdElement = createdElement;
     },
@@ -65,7 +65,7 @@ var NumberHandler;
      * @param  {[string]} text [The text we want to set in the element]
      */
     setText: function(text) {
-      var createdElement = ElementCreator.createdElement;
+      let createdElement = ElementCreator.createdElement;
       createdElement.createTextNode = text;
       ElementCreator.createdElement = createdElement;
     },
@@ -75,7 +75,7 @@ var NumberHandler;
      * @param  {[string]} id [The ID of the element we want to place it on]
      */
     place: function(element) {
-      var createdElement = ElementCreator.createdElement;
+      let createdElement = ElementCreator.createdElement;
       if (createdElement != '') {
         select(element).appendChild(createdElement);
       }
@@ -242,7 +242,7 @@ var NumberHandler;
       if (KeyDetector.getStatus() == true) {
 
         if (KeyDetector.keyPressReturnFunction != '') {
-          var keyCode = event.keyCode;
+          let keyCode = event.keyCode;
           // Contains a array with the keycode and what the code means
 
             KeyDetector.lastKeyPress = [keyCode ,keyCodes[keyCode]];
@@ -269,7 +269,7 @@ var NumberHandler;
      * @return {[obj]}     [The result from ajax request as a object]
      */
     get_withCallback: function(url) {
-      var xhttp = new XMLHttpRequest();
+      let xhttp = new XMLHttpRequest();
       xhttp.open("GET", url, false);
       xhttp.send();
 
@@ -281,7 +281,7 @@ var NumberHandler;
      * @return {[object]} xhhtp [The returned object]
      */
     get_withoutCallBack: function(url) {
-      var xhttp = new XMLHttpRequest();
+      let xhttp = new XMLHttpRequest();
       xhttp.open("GET", url, false);
       xhttp.send();
     },
@@ -292,7 +292,7 @@ var NumberHandler;
      * @return {[type]}                [description]
      */
     post_withCallback: function(url ,postParameters) {
-      var xhttp = new XMLHttpRequest();
+      let xhttp = new XMLHttpRequest();
       xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
           console.log("Done with ajax post with callBack");
@@ -311,7 +311,7 @@ var NumberHandler;
      * @param  {[string]} postParameters [With the postParameters in it]
      */
     post_withoutCallback: function(url, postParameters) {
-      var xhttp = new XMLHttpRequest();
+      let xhttp = new XMLHttpRequest();
       xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
           console.log("Done with ajax post without callBack");
@@ -370,8 +370,8 @@ var NumberHandler;
      * @return {[string]} [The HTML code]
      */
     tableContent: function() {
-      var content = '';
-      var currentArray = MultiArrayVisualizer.multiArray;
+      let content = '';
+      let currentArray = MultiArrayVisualizer.multiArray;
       currentArray.forEach(function(rowArray, index, arr) {
         // To loop trough the first layer of the array
         content += '<tr>';
@@ -391,7 +391,7 @@ var NumberHandler;
     generateTable: function() {
       if (MultiArrayVisualizer.multiArray.length > 0) {
         // If the array a array is set
-        var table = '<table>';
+        let table = '<table>';
         table += MultiArrayVisualizer.tableContent();
         table += '</table>';
         return(table);
@@ -508,7 +508,7 @@ var NumberHandler;
      * @return {[boolean]}        [If it is a even number, we return true]
      */
     CheckIfNumerIsEven: function(number) {
-      var result = number / 2;
+      let result = number / 2;
       if (Number.isInteger(result) === true) {
         // It is even
         return(true);
@@ -526,7 +526,7 @@ var NumberHandler;
      * @return {[boolean]}        [Returns true if a number is odd]
      */
     checkIfNumberIsOdd: function(number) {
-      var result = number / 2;
+      let result = number / 2;
       if (Number.isInteger(result) === true) {
         // It is even
         return(false);
