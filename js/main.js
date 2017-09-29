@@ -2,7 +2,7 @@ var Ajax;
 var Loader;
 var KeyDetector;
 var ElementCreator;
-var Listners;
+var Listner;
 var Timer;
 var MultiArrayVisualizer;
 var VideoHandler;
@@ -327,7 +327,7 @@ var NumberHandler;
 })();
 
 (function() {
-  Listners = {
+  Listner = {
     /**
      * Adds a event listner to a element
      * @param  {[string]} element      [The identifyer of a element]
