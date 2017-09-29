@@ -462,8 +462,7 @@ var NumberHandler;
 
     /**
      * Sets the current time of were the video is playing
-     * @param  {[type]} timeInSeconds [description]
-     * @return {[type]}               [description]
+     * @param  {[int]} timeInSeconds [The time in seconds were you want to get the video to]
      */
     setCurrentTime: function(timeInSeconds) {
       VideoHandler.videoHandlerElement = timeInSeconds;
