@@ -6,6 +6,7 @@ var Listners;
 var Timer;
 var MultiArrayVisualizer;
 var VideoHandler;
+var NumberHandler;
 // The classes
 
 
@@ -496,6 +497,46 @@ var VideoHandler;
 
       else if (VideoHandler.videoHandlerElement.paused === false) {
         return('playing');
+      }
+    }
+  }
+})();
+
+(function() {
+  NumberHandler = {
+    /**
+     * Checks if a number is even
+     * @param  {[int]} number [The number you want to check]
+     * @return {[boolean]}        [If it is a even number, we return true]
+     */
+    CheckIfNumerIsEven: function(number) {
+      var result = number / 2;
+      if (Number.isInteger(result) === true) {
+        // It is even
+        return(true);
+      }
+
+      else {
+        // It isn't even
+        return(false);
+      }
+    },
+
+    /**
+     * Checks if a number is odd
+     * @param  {[int]} number [The number we want to check]
+     * @return {[boolean]}        [Returns true if a number is odd]
+     */
+    checkIfNumberIsOdd: function(number) {
+      var result = number / 2;
+      if (Number.isInteger(result) === true) {
+        // It is even
+        return(false);
+      }
+
+      else {
+        // It odd
+        return(true);
       }
     }
   }
