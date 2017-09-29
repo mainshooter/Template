@@ -133,9 +133,8 @@ var NumberHandler;
      */
     start: function() {
       Timer.timerInterval = setInterval(function(){
-        var callbackFunction = Timer.timerCallback;
-        callbackFunction(Timer.getCurrentTime());
-        // By default we send the current time
+        Timer.timerCallback(Timer.getCurrentTime());
+        // By default we send the current time of the timer, to the callback function
 
         Timer.count();
         // Increase the counter
